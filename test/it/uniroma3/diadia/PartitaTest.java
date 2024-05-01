@@ -20,7 +20,7 @@ public class PartitaTest {
 		this.partitaFinita = new Partita();
 		this.partitaFinita.setFinita();
 		this.partitaNocfu = new Partita();
-		this.partitaNocfu.setCfu(0);
+		this.partitaNocfu.getGiocatore().setCfu(0);
 		this.partitaVinta = new Partita();
 		this.partitaVinta.setStanzaCorrente(this.partitaVinta.getStanzaVincente());
 	}
