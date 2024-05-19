@@ -4,6 +4,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
+
+import it.uniroma3.diadia.ambienti.Labirinto;
+import it.uniroma3.diadia.ambienti.LabirintoBuilder;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.ComandoPosa;
@@ -11,13 +14,19 @@ import it.uniroma3.diadia.comandi.ComandoPosa;
 public class ComandoPosaTest {
 
 	private Partita partita;
+	private Labirinto labirinto;
 	private Attrezzo attrezzo;
 	private IO io;
 	private Comando comando;
-
+	
 	@Before
 	public void setUp() {
-		partita = new Partita();
+		labirinto = new LabirintoBuilder()
+				.addStanzaIniziale("LabCampusOne")
+				.addStanzaVincente("Biblioteca")
+				.addAdiacenza("LabCampusOne", "Biblioteca", "ovest")
+				.getLabirinto();
+		partita = new Partita(labirinto);
 		attrezzo = new Attrezzo("martello", 2);
 		comando = new ComandoPosa();
 		io = new IOConsole();

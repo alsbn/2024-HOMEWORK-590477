@@ -30,7 +30,7 @@ public class ComandoPrendi implements Comando {
 			io.mostraMessaggio("Nessuno oggetto nella stanza con quel nome");
 		else {
 	    		partita.getGiocatore().getBorsa().addAttrezzo(partita.getStanzaCorrente().getAttrezzo(attrezzo));
-	    		partita.getStanzaCorrente().removeAttrezzo(attrezzo);
+	    		partita.getStanzaCorrente().removeAttrezzo(partita.getStanzaCorrente().getAttrezzo(attrezzo));
 			}
 		io.mostraMessaggio(partita.getGiocatore().getBorsa().toString());
 	}

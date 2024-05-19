@@ -6,15 +6,19 @@ import static org.junit.Assert.assertNotEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+import it.uniroma3.diadia.ambienti.Labirinto;
+import it.uniroma3.diadia.ambienti.LabirintoBuilder;
 import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.ComandoVai;
 
 public class ComandoVaiTest {
+	
 	private Stanza s1;
 	private Stanza s2;
-	private Comando vai;
 	private Partita p;
+	private Labirinto labirinto;
+	private Comando vai;
 	private IO io;
 	
 	@Before
@@ -22,7 +26,12 @@ public class ComandoVaiTest {
 		s1 = new Stanza("aula 1");
 		s2 = new Stanza("aula 2");
 		vai = new ComandoVai();
-		p = new Partita();
+		labirinto = new LabirintoBuilder()
+				.addStanzaIniziale("LabCampusOne")
+				.addStanzaVincente("Biblioteca")
+				.addAdiacenza("LabCampusOne", "Biblioteca", "ovest")
+				.getLabirinto();
+		p = new Partita(labirinto);
 		io = new IOConsole();
 	}
 

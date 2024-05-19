@@ -41,7 +41,7 @@ public class StanzaTest {
 	
 	@Test
 	public void testNoAdiacente() {
-		assertEquals(0, this.stanzaVuotaNoAdiacente.getDirezioni().length);
+		assertEquals(0, this.stanzaVuotaNoAdiacente.getDirezioni().size());
 	}
 	
 	@Test
