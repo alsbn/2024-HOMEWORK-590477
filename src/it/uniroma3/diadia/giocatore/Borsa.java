@@ -96,14 +96,6 @@ public class Borsa {
 		s.addAll(this.nome2attrezzi.values());
 		return s;
 	}
-//	List<Attrezzo> getContenutoOrdinatoPerPesoCompareTo(){
-//		Set<Attrezzo> s = new TreeSet<>();
-//		s.addAll(this.nome2attrezzi.values());
-//		List<Attrezzo> l = new ArrayList<>();
-//		
-//		l.addAll(s);
-//		return l;
-//	}
 	
 	List<Attrezzo> getContenutoOrdinatoPerPeso(){
 		List<Attrezzo> l = new ArrayList<>();
